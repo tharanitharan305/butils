@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
               // This code says "Bitcoin", but the server will change it to "Dogecoin"
               const BText(
-                "I trust Bitcoin explicitly.",
+                "I trust Bitcoin explicitly good.",
                 style: TextStyle(fontSize: 24),
               ),
 
@@ -61,7 +61,11 @@ class MyApp extends StatelessWidget {
                 r"E = mc^2",
                 textStyle: TextStyle(fontSize: 30),
               ),
-              Math.tex(r"E = mc^2"),
+              const BLatex(
+                r"E = mkc^2",
+                textStyle: TextStyle(fontSize: 30),
+              ),
+              Math.tex(r"E = mc^2"), Math.tex(r"E = mjc^2"),
             ],
           ),
         ),

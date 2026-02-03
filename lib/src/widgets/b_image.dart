@@ -1,5 +1,4 @@
-﻿import 'package:flutter/widgets.dart';
-import '../engine/butils_engine.dart';
+﻿import '../engine/butils_engine.dart';
 import 'package:flutter/material.dart';
 
 /// A drop-in replacement for [Image] that validates source integrity.

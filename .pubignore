@@ -1,0 +1,12 @@
+﻿# Ignore the entire server folder (Demo only, not for package)
+server/
+
+# Ignore build artifacts
+build/
+example/build/
+.dart_tool/
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.iml

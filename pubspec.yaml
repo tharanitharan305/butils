@@ -1,7 +1,7 @@
 name: butils
-description: A collection of standard utility widgets for Flutter applications.
-version: 1.0.0
-homepage: https://example.com
+description: works on cloud pattern now
+version: 1.0.1
+homepage: https://github.com/tharanitharan305/butils
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

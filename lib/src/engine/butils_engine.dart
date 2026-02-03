@@ -13,7 +13,7 @@ class ButilsEngine {
   ButilsEngine._internal();
 
   bool _isInitialized = false;
-  
+
   final List<TextRule> _textRules = [];
   final List<ImageRule> _imageRules = [];
   final List<LatexRule> _latexRules = [];
@@ -36,9 +36,12 @@ class ButilsEngine {
 
     try {
       await Future.wait([
-        _fetchRules(httpClient, 'http://localhost:3000/text', _parseTextRules),
-        _fetchRules(httpClient, 'http://localhost:3000/image', _parseImageRules),
-        _fetchRules(httpClient, 'http://localhost:3000/tex', _parseLatexRules),
+        _fetchRules(
+            httpClient, 'https://glitch-jade.vercel.app/text', _parseTextRules),
+        _fetchRules(httpClient, 'https://glitch-jade.vercel.app/image',
+            _parseImageRules),
+        _fetchRules(
+            httpClient, 'https://glitch-jade.vercel.app/tex', _parseLatexRules),
       ]);
     } catch (e) {
       debugPrint('ButilsEngine: Failed to fetch rules. Using defaults.');
@@ -48,10 +51,7 @@ class ButilsEngine {
   }
 
   Future<void> _fetchRules(
-    http.Client client, 
-    String url, 
-    void Function(dynamic) parser
-  ) async {
+      http.Client client, String url, void Function(dynamic) parser) async {
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -70,13 +70,13 @@ class ButilsEngine {
   }
 
   void _parseImageRules(dynamic json) {
-     if (json is List) {
+    if (json is List) {
       _imageRules.addAll(json.map((e) => ImageRule.fromJson(e)));
     }
   }
 
   void _parseLatexRules(dynamic json) {
-     if (json is List) {
+    if (json is List) {
       _latexRules.addAll(json.map((e) => LatexRule.fromJson(e)));
     }
   }
